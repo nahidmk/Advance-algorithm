@@ -16,8 +16,6 @@ public class Main {
     private static int mcm(int[] arr, int n) {
         int t[][] = new int[n][n];
         int s[][] = new int[n][n];
-        List<String> matrix = new ArrayList<>();
-        matrix.add("(");
         for(int l = 2;l<n;l++)
         {
             for(int i = 1;i<n-l+1;i++)
@@ -43,11 +41,7 @@ public class Main {
 //            }
 //            System.out.println();
 //        }
-        for(int i = 0;i<n-1;i++)
-        {
-            matrix.add("M"+(i+1));
-        }
-        matrix.add(")");
+
         calculateExpresion(s,1,n-1);
         System.out.println();
         return t[1][n-1];
@@ -59,7 +53,7 @@ public class Main {
             System.out.print("M"+i+" ");
         }else
         {
-            System.out.print("(");
+            System.out.println("(");
             calculateExpresion(s,i,s[i][j]);
             calculateExpresion(s,s[i][j]+1,j);
             System.out.print(")");
